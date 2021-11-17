@@ -129,4 +129,16 @@ describe('Park', function() {
     assert.strictEqual(park.getDinosaurCount(), expected);
   });
 
+  it('should be able to get  dinosaurs by diet',function(){
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur4);
+    park.addDinosaur(dinosaur5);
+    
+    const dinosaursByDiet=park.getDinosaursByDiet();
+
+    const expected = {carnivore: 1, herbivore: 3,omnivore: 1};
+    assert.deepStrictEqual(dinosaursByDiet, expected);
+  });
 });

@@ -65,5 +65,16 @@ Park.prototype.getRevenuePerYear=function(){
     return this.getTotalVisitorsPerYear()*this.ticketPrice;
 }
 
+Park.prototype.getDinosaursByDiet=function(){
+    const getDinosaursByDiet={};
+    for (const dinosaur of this.dinosaurCollection){
+        if(getDinosaursByDiet[dinosaur.diet]){
+            getDinosaursByDiet[dinosaur.diet]+=1;
+        }else{
+            getDinosaursByDiet[dinosaur.diet]=1;
+        }
+    }
+    return getDinosaursByDiet
+}
 
 module.exports = Park;
